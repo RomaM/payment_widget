@@ -84,7 +84,7 @@ export default class Validate {
         return field.value && this.validateRegEx(lettersRegEx, field.value) && field.value.length >= 3 ? true : errorMsgs.cardname;
         break;
       case 'cardnumber':
-        return field.value && this.validateRegEx(numbersRegEx, field.value) && this.luhnAlgorithm && field.value.length === 12 ? true : errorMsgs.cardnumber;
+        return field.value && this.validateRegEx(numbersRegEx, field.value) && this.luhnAlgorithm && field.value.length === 16 ? true : errorMsgs.cardnumber;
         break;
       case 'expdate':
         return field.value ? true : errorMsgs.carddate;
