@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Pay</title>
+    <style>
+      iframe {
+        position: fixed;
+        border: none;
+        top: 0;
+        right: 0;
+        width: 600px;
+        min-height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="number" class="amount-field">
+    <button class="pay-btn">Pay</button>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('src', 'https://romam.github.io/payment_widget/dist/index.html');
+        iframe.setAttribute('id', 'paymentIframe');
+        iframe.setAttribute('style', 'display: none;');
+        document.body.appendChild(iframe);
+
+        var payBtn = document.querySelector('.pay-btn');
+        var amountField = document.querySelector('.amount-field');        
+        var iframeEl = document.getElementById('paymentIframe');
+
+        payBtn.addEventListener('click', function(ev) {          
+          ev.target.setAttribute('disabled', 'true');
+          iframe.setAttribute('style', 'display: block;');     
+          iframeEl.contentWindow.postMessage(amountField.value, '*');
+        });
+
+      });
+    </script>
+  </body>
+</html>

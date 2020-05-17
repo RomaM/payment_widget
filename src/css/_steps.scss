@@ -1,0 +1,19 @@
+.step-section {
+  display: none;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100px;
+  padding: 15px;
+  box-sizing: border-box;
+  border-left: 1px solid $lightGrey;
+  border-right: 1px solid $lightGrey;
+  border-bottom: 1px solid $lightGrey;  
+
+  &.active {
+    display: block;
+  }
+
+  @media (min-width: 480px) {
+    
+  }
+}

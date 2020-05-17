@@ -1,6 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const uglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
 const libraryName = 'payment_widget'; 
@@ -58,10 +58,11 @@ module.exports = {
     ],
   },
   plugins: [
-    new uglifyJsPlugin(),
+    // new uglifyJsPlugin(),
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'index.html'),
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
+  mode: 'production'
 };

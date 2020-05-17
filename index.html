@@ -8,13 +8,76 @@
   </head>
   <body>
     <div class="wrap">
-      <section class="country-select">
-      
+      <h2>Payment Widget</h2>
+      <section class="step-section country-selection active" data-step="1">
+        <form class="select-form">
+          <div class="form-group">
+            <label class="form-group__label" for="country">Select country</label>
+            <select id="country" name="country" class="form-group__field form-group__field_country" data-type="country">
+              <option value="" selected disabled hidden>Select Country</option>
+              <option value="UA">Ukraine</option>
+              <option value="VG">British Virgin Islands</option>
+              <option value="US">USA</option>
+            </select>
+            <div class="form-group__error"></div>
+          </div>
+          <div class="select-form__actions form-actions">
+            <button type="button" class="form-actions__btn form-actions__btn_next">Next</button>
+          </div>
+        </form>
       </section>
-      <section class="payment-method">
-      
+      <section class="step-section payment-method" data-step="2">
+        <form class="select-form">
+          <div class="form-group">
+            <label class="form-group__label form-group__label_payment" for="payment-method"></label>
+            <input class="form-group__field form-group__field_payment" type="text" id="payment-method" data-type="paymentmethod" hidden>
+            <div class="form-group__error"></div>
+          </div>        
+
+          <div class="select-form__actions form-actions">
+            <button type="button" class="form-actions__btn form-actions__btn_back">Back</button>
+            <button type="button" class="form-actions__btn form-actions__btn_next">Next</button>
+          </div>
+        </form>
       </section>
-    
+      <section class="step-section payment-form" data-step="3">
+        <form class="select-form">
+          <div class="form-group">
+            <label class="form-group__label" for="cardholder">Enter name</label>
+            <input class="form-group__field" type="text" id="cardholder" data-type="cardholder">
+            <div class="form-group__error"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-group__label" for="cardnumber">Enter card number</label>
+            <input class="form-group__field" type="number" id="cardnumber" data-type="cardnumber">
+            <div class="form-group__error"></div>
+          </div>          
+          <div class="form-group">
+            <label class="form-group__label" for="expdate">Enter card expiry date</label>
+            <input class="form-group__field form-group__field_date" type="text" id="expdate" data-type="expdate">
+            <div class="form-group__error"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-group__label" for="cvv">Enter cvv</label>
+            <input class="form-group__field" type="number" id="cvv" data-type="cvv">
+            <div class="form-group__error"></div>
+          </div> 
+          <div class="select-form__actions form-actions">
+            <button type="button" class="form-actions__btn form-actions__btn_back">Back</button>
+            <button type="submit" class="form-actions__btn form-actions__btn_submit">Submit</button>
+          </div>
+        </form>
+      </section>
+      <section class="step-section success" data-step="4">
+        <div class="message">
+          <h3 class="message__success">Payment successful!</h3>
+        </div>
+      </section>
+      <section class="step-section error" data-step="5">
+        <div class="message">
+          <h3 class="message__error">Something went wrong!</h3>
+        </div>
+      </section>
     </div>
   </body>
 </html>
